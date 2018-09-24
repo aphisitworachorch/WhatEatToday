@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using WhatEatToday.Models
+
+<h2>Shop</h2>
+
+<table class="table table-responsive table-hover" style="position: center">
+   
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>location</th>
+        <th>details</th>
+        <th>type</th>
+        <th>pic</th>
+    </tr>
+ @foreach (Shop sh in ViewBag.listShop)
+ {
+   <tr>
+         <td>@sh.shop_id</td>
+         <td>@sh.name</td>
+         <td>@sh.location</td>
+         <td>@sh.details</td>
+         <td>@sh.type</td>
+         <td><img src=@Url.Content("~/Content/Images/"+ @sh.pic) style="width: 300px;height: auto"/></td>
+ </tr>
+     }
+
+</table> 
